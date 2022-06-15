@@ -1,7 +1,7 @@
+import { PhotoPage } from "./pages/photo-page";
+
 function App() {
-  return (
-    <div>hi</div>
-  )
+  return <PhotoPage />;
 }
 
-export default App
+export default App;
