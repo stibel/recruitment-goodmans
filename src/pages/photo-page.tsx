@@ -34,8 +34,10 @@ export const PhotoPage = () => {
     array: photos,
     set: setPhotos,
     push: addPhoto,
-    pop: removePhoto,
+    pop: popPhoto,
+    remove: removePhoto,
   } = useArray<File>([]);
+  const [activeIndex, setActiveIndex] = useState<number>(0);
   const [activePhoto, setActivePhoto] = useState<string>("");
 
   useEffect(() => {
@@ -43,20 +45,37 @@ export const PhotoPage = () => {
       setActivePhoto("");
       return;
     }
-    setActivePhoto(createUrl(photos[0]));
-  }, [photos]);
+    setActivePhoto(createUrl(photos[activeIndex]));
+  }, [photos, activeIndex]);
 
   const onChange = (files: Array<File>) => {
     setPhotos(files);
   };
 
+  const onSelected = (index: number) => {
+    setActiveIndex(index);
+  };
+
+  const onDelete = (index: number) => {
+    removePhoto(photos[index]);
+  };
+
   return (
     <Page>
       <ImageWrapper>
-        <StyledImg src={activePhoto} alt={"active photo"} />
+        {activePhoto ? (
+          <StyledImg src={activePhoto} alt={"Active photo"} />
+        ) : (
+          <em>No photos</em>
+        )}
       </ImageWrapper>
       <FileControlWrapper>
-        <FileList files={photos} />
+        <FileList
+          files={photos}
+          activeIndex={activeIndex}
+          onSelect={onSelected}
+          onDelete={onDelete}
+        />
         <FileUpload onChange={onChange} />
       </FileControlWrapper>
     </Page>

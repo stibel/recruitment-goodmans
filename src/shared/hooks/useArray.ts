@@ -17,6 +17,13 @@ export const useArray = <T>(initialValue: Array<T> = []) => {
     [setValue]
   );
 
+  const remove = useCallback(
+    (item: T) => {
+      setValue((value) => value.filter((i) => i !== item));
+    },
+    [setValue]
+  );
+
   const pop = useCallback(() => {
     setValue((value) => value.slice(-1));
   }, [setValue]);
@@ -26,5 +33,6 @@ export const useArray = <T>(initialValue: Array<T> = []) => {
     set,
     push,
     pop,
+    remove
   };
 };
