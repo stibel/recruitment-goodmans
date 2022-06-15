@@ -33,8 +33,6 @@ export const PhotoPage = () => {
   const {
     array: photos,
     set: setPhotos,
-    push: addPhoto,
-    pop: popPhoto,
     remove: removePhoto,
   } = useArray<File>([]);
   const [activeIndex, setActiveIndex] = useState<number>(0);
@@ -57,6 +55,9 @@ export const PhotoPage = () => {
   };
 
   const onDelete = (index: number) => {
+    if (index === activeIndex && activeIndex === photos.length - 1) {
+      setActiveIndex(activeIndex - 1);
+    }
     removePhoto(photos[index]);
   };
 
