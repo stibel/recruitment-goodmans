@@ -43,10 +43,12 @@ export const PhotoPage = () => {
       setActivePhoto("");
       return;
     }
+    if (activeIndex >= photos.length - 1) setActiveIndex(photos.length - 1);
     setActivePhoto(createUrl(photos[activeIndex]));
   }, [photos, activeIndex]);
 
   const onChange = (files: Array<File>) => {
+    setActiveIndex(0);
     setPhotos(files);
   };
 
