@@ -14,6 +14,7 @@ const ImageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #cfd2a5;
+  color: #c15e68;
 `;
 
 const StyledImg = styled.img`
