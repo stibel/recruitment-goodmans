@@ -1,6 +1,5 @@
-import { useEffect } from "react";
-import styled from "styled-components";
 import { ImCross } from "react-icons/im";
+import styled from "styled-components";
 
 const StyledList = styled.ul`
   width: 20%;
@@ -8,7 +7,6 @@ const StyledList = styled.ul`
   display: flex;
   flex-flow: column;
   justify-content: center;
-  /* align-items: center; */
   text-align: left;
 `;
 

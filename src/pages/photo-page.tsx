@@ -7,7 +7,6 @@ import { useArray } from "../shared/hooks/useArray";
 import { createUrl } from "../shared/utils";
 
 const ImageWrapper = styled.div`
-  /* position: relative; */
   width: 100%;
   height: 75%;
   display: flex;
