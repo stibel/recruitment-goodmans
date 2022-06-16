@@ -10,6 +10,7 @@ const StyledDiv = styled.div`
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  background-color: #c15e68;
 `;
 
 interface PageProps {

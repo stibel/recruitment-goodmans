@@ -13,7 +13,7 @@ const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0ffff;
+  background-color: #cfd2a5;
 `;
 
 const StyledImg = styled.img`
@@ -48,8 +48,12 @@ export const PhotoPage = () => {
   }, [photos, activeIndex]);
 
   const onChange = (files: Array<File>) => {
-    setActiveIndex(0);
+    if (photos.length + files.length <= 5) {
+      setPhotos(photos.concat(files));
+      return;
+    }
     setPhotos(files);
+    setActiveIndex(0);
   };
 
   const onSelected = (index: number) => {

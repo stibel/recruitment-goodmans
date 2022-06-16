@@ -9,9 +9,10 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 3px dotted #ccc;
+  border: 3px dotted #cfd2a5;
   border-radius: 25px;
-  background-color: #f0ffff;
+  background-color: #c15e68;
+  color: #cfd2a5;
 `;
 
 interface FileUploadProps {

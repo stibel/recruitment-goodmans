@@ -21,7 +21,7 @@ const StyledListItem = styled.li<{ active: boolean }>`
   justify-content: space-between;
   background-color: ${(props) => (props.active ? "#c15e68" : "#cfd2a5")};
   color: ${(props) => (props.active ? "#cfd2a5" : "#c15e68")};
-  border: 1px solid ${(props) => (props.active ? "#c15e68" : "#cfd2a5")};
+  border: 1px solid ${(props) => (props.active ? "#cfd2a5" : "#c15e68")};
   border-radius: 5px;
   cursor: pointer;
 `;
@@ -39,8 +39,6 @@ export const FileList = ({
   onSelect,
   onDelete,
 }: FileListProps) => {
-  useEffect(() => console.log(files), [files]);
-
   return (
     <StyledList>
       {files.map((file, index) => (
